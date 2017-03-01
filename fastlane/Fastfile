@@ -1,0 +1,9 @@
+lane :test do
+  slack_train_start(distance: 5)
+  slack_train
+  slack_train
+end
+
+error do
+  slack_train_crash
+end

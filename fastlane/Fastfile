@@ -1,5 +1,10 @@
 lane :test do
-  slack_train_start(distance: 5)
+  # slack_train_start(distance: 5, train: "🚀", reverse_direction: true, rail: "✨")
+  slack_train_start
+  slack_train
+  slack_train
+  # UI.user_error!("NeoNacho")
+  slack_train
   slack_train
   slack_train
 end

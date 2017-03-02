@@ -2,13 +2,20 @@ module Fastlane
   module Actions
     class SlackTrainAction < Action
       def self.run(params)
-        train_emoji = params[:train]
+        train_emoji = lane_context[SharedValues::SLACK_TRAIN_EMOJI]
+        rail_emoji = lane_context[SharedValues::SLACK_TRAIN_RAIL]
         total_distance = lane_context[SharedValues::SLACK_TRAIN_DISTANCE]
+        current_position = lane_context[SharedValues::SLACK_TRAIN_CURRENT_TRAIN_POSITION]
+        speed = lane_context[SharedValues::SLACK_TRAIN_DIRECTION]
 
-        before = "=" * (total_distance - 1)
+        before = rail_emoji * current_position
+        after = rail_emoji * (total_distance - current_position - 1)
 
-        message = "#{before}#{train_emoji}"
+        message = [before, train_emoji, after].join("")
         other_action.slack(message: message)
+        UI.message(message)
+
+        lane_context[SharedValues::SLACK_TRAIN_CURRENT_TRAIN_POSITION] += speed
       end
 
       def self.description
@@ -16,26 +23,15 @@ module Fastlane
       end
 
       def self.authors
-        ["Felix Krause"]
+        ["@KrauseFx"]
       end
 
       def self.return_value
-        # If your method provides a return value, you can describe here what it does
-      end
-
-      def self.details
-        # Optional:
-        "Nope"
+        "A string that is being sent to slack"
       end
 
       def self.available_options
-        [
-          FastlaneCore::ConfigItem.new(key: :train,
-                                  env_name: "SLACK_TRAIN_TRAIN",
-                               description: "Train emoji",
-                             default_value: "🚝",
-                                      type: String)
-        ]
+        []
       end
 
       def self.is_supported?(platform)

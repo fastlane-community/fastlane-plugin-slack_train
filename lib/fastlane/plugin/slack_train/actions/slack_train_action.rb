@@ -8,6 +8,9 @@ module Fastlane
         current_position = lane_context[SharedValues::SLACK_TRAIN_CURRENT_TRAIN_POSITION]
         speed = lane_context[SharedValues::SLACK_TRAIN_DIRECTION]
 
+        UI.user_error!("train drove too far") if current_position < 0
+        UI.user_error!("train drove too far") if total_distance == current_position
+
         before = rail_emoji * current_position
         after = rail_emoji * (total_distance - current_position - 1)
 

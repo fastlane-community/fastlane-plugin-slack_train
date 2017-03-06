@@ -1,8 +1,8 @@
 # slack_train plugin
 
-[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-slack_train)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/KrauseFx/fastlane-plugin-slack_train/blob/master/LICENSE)
 [![Gem](https://img.shields.io/gem/v/fastlane-plugin-slack_train.svg?style=flat)](https://rubygems.org/gems/fastlane-plugin-slack_train)
+[![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-slack_train)
 
 ## Getting Started
 

@@ -65,12 +65,6 @@ end
 
 ## Run tests for this plugin
 
-To run both the tests, and code style validation, run
-
-```
-rake
-```
-
 To automatically fix many of the styling issues, use
 ```
 rubocop -a

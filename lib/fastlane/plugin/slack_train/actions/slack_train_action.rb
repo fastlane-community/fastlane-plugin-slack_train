@@ -13,9 +13,11 @@ module Fastlane
 
         before = rail_emoji * current_position
         after = rail_emoji * (total_distance - current_position - 1)
+        lane_name = lane_context[SharedValues::LANE_NAME]
 
-        message = [before, train_emoji, after].join("")
-        other_action.slack(message: message)
+        message = ["`#{lane_name}` ", before, train_emoji, after].join("")
+        other_action.slack(message: message,
+                  default_payloads: [])
         UI.message(message)
 
         lane_context[SharedValues::SLACK_TRAIN_CURRENT_TRAIN_POSITION] += speed

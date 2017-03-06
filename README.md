@@ -12,15 +12,13 @@ fastlane add_plugin slack_train
 
 ## About slack_train
 
-Idea from [Paul Taykalo‏](https://twitter.com/TT_Kilew/status/766651907117023233)
+Idea from [Paul Taykalo](https://twitter.com/TT_Kilew/status/766651907117023233)
 
 Show a train of the fastlane progress
 
-![assets/train.png](assets/train.png)
-
-![assets/rocket.png](assets/rocket.png)
-
-![assets/crash.png](assets/crash.png)
+Train | Rocket | Crash
+------|--------|-------
+![assets/train.png](assets/train.png) | ![assets/rocket.png](assets/rocket.png) | ![assets/crash.png](assets/crash.png)
 
 ## Example
 

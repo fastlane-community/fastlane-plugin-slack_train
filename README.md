@@ -12,15 +12,56 @@ fastlane add_plugin slack_train
 
 ## About slack_train
 
+Idea from [Paul Taykalo‏](https://twitter.com/TT_Kilew/status/766651907117023233)
+
 Show a train of the fastlane progress
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+![assets/train.png](assets/train.png)
+
+![assets/rocket.png](assets/rocket.png)
+
+![assets/crash.png](assets/crash.png)
 
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+```ruby
+lane :beta do
+  slack_train_start(distance: 4)
+  slack_train
+
+  cocoapods
+  slack_train
+
+  gym
+  slack_train
+
+  crashlytics
+  slack_train
+end
+```
+
+Or use a rocket emoji:
+
+```ruby
+lane :beta do
+  slack_train_start(distance: 4,
+                       train: "🚀", 
+           reverse_direction: true, 
+                        rail: "✨")
+  slack_train
+
+  cocoapods
+  slack_train
+
+  gym
+  slack_train
+
+  crashlytics
+  slack_train
+end
+```
 
 ## Run tests for this plugin
 

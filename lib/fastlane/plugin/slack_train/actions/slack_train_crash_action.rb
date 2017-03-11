@@ -3,7 +3,7 @@ module Fastlane
     class SlackTrainCrashAction < Action
       def self.run(params)
         message = "💥" * lane_context[SharedValues::SLACK_TRAIN_DISTANCE]
-        other_action.slack(message: message)
+        other_action.slack(message: message, success: false)
       end
 
       def self.description

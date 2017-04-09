@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{krausefx@gmail.com}
 
   spec.summary       = %q{Show a train of the fastlane progress}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-slack_train"
+  spec.homepage      = "https://github.com/KrauseFx/fastlane-plugin-slack_train"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)

@@ -7,6 +7,7 @@ module Fastlane
         total_distance = lane_context[SharedValues::SLACK_TRAIN_DISTANCE]
         current_position = lane_context[SharedValues::SLACK_TRAIN_CURRENT_TRAIN_POSITION]
         speed = lane_context[SharedValues::SLACK_TRAIN_DIRECTION]
+        return if total_distance.nil? # train hasn't started yet
 
         UI.user_error!("train drove too far") if current_position < 0
         UI.user_error!("train drove too far") if total_distance == current_position

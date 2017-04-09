@@ -6,6 +6,7 @@ module Fastlane
         return if total_distance.nil? # train hasn't started yet
 
         message = "💥" * total_distance
+        other_action.slack(message: message, success: false, default_payloads: [])
       end
 
       def self.description

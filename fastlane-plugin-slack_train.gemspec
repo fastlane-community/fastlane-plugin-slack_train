@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-slack_train'
   spec.version       = Fastlane::SlackTrain::VERSION
   spec.author        = %q{Felix Krause}
-  spec.email         = %q{krausefx@gmail.com}
+  spec.email         = %q{slacktrain@krausefx.com}
 
   spec.summary       = %q{Show a train of the fastlane progress}
   spec.homepage      = "https://github.com/KrauseFx/fastlane-plugin-slack_train"
